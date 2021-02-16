@@ -1,11 +1,15 @@
-CREATE TABLE salaries (
-	emp_no VARCHAR(10),
-	salary INTEGER
-);
 
-COPY salaries(emp_no, salary)
-FROM 'F:\Matt\GitHome\sql-challenge\data\salaries.csv'
-DELIMITER ','
-CSV HEADER;
 
-select * from salaries;
+select 
+	employees.emp_no as "Employee Name", 
+	last_name as "Last Name",
+	first_name as "First Name", 
+	sex as Sex,
+	salaries.salary as Salary
+
+from 
+	employees
+INNER JOIN salaries
+on salaries.emp_no = employees.emp_no
+ORDER BY employees.last_name
+	;
