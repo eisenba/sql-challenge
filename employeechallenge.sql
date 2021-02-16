@@ -93,6 +93,16 @@ WHERE
 ;
 
 
+Select
+	last_name as "Last Name",
+	count(last_name) as "Count"
+from
+	employees
+Group BY
+	last_name
+ORDER BY
+	count(last_name) DESC;
+
 
 
 
