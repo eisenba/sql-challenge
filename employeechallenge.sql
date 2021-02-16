@@ -76,6 +76,22 @@ WHERE
 	departments.dept_name = 'Sales'
 ;
 
+Select 
+	employees.emp_no as "Employee Num",
+	employees.last_name as "Last Name",
+	employees.first_name as "First Name",
+	departments.dept_name as "Dept Name"
+from
+	dept_emp
+INNER JOIN employees
+on employees.emp_no = dept_emp.emp_no
+INNER JOIN departments
+on departments.dept_no = dept_emp.dept_no
+WHERE
+	departments.dept_name = 'Sales' OR
+	departments.dept_name = 'Development'
+;
+
 
 
 
