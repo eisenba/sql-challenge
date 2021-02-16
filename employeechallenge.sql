@@ -49,12 +49,16 @@ INNER JOIN departments
 on departments.dept_no = dept_emp.dept_no
 ;
 
-
-
-
-
-
-
+Select
+	first_name as "First Name",
+	last_name as "Last Name",
+	sex as "Sex"
+from
+	employees
+Where
+	first_name = 'Hercules' AND
+	last_name LIKE 'B%'
+;
 
 
 
