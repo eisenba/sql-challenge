@@ -19,7 +19,8 @@ select
 from
 	employees
 WHERE
-	EXTRACT(year FROM "hire_date") = 1986;
+	EXTRACT(year FROM "hire_date") = 1986
+;
 	
 select
 	dept_manager.dept_no as "Dept Num",
@@ -59,6 +60,28 @@ Where
 	first_name = 'Hercules' AND
 	last_name LIKE 'B%'
 ;
+
+Select 
+	employees.emp_no as "Employee Num",
+	employees.last_name as "Last Name",
+	employees.first_name as "First Name",
+	departments.dept_name as "Dept Name"
+from
+	dept_emp
+INNER JOIN employees
+on employees.emp_no = dept_emp.emp_no
+INNER JOIN departments
+on departments.dept_no = dept_emp.dept_no
+WHERE
+	departments.dept_name = 'Sales'
+;
+
+
+
+
+
+
+
 
 
 
